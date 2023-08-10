@@ -1,0 +1,427 @@
+  [1m[35m (170.4ms)[0m  [1m[35mCREATE DATABASE "First_development" ENCODING = 'unicode'[0m
+  [1m[35m (140.8ms)[0m  [1m[35mCREATE DATABASE "First_test" ENCODING = 'unicode'[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3875797148642676810)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-08-10 12:06:54.707746"], ["updated_at", "2023-08-10 12:06:54.707746"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3875797148642676810)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3875797148642676810)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20230810121147)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230810121147"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3875797148642676810)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-08-10 17:43:45 +0530
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.7ms | Allocations: 465)
+Completed 200 OK in 30ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 4536)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:49 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 22.6ms | Allocations: 181)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 1183)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:49 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 8)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 598)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:49 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:49 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 22.8ms | Allocations: 7)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 593)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:50 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:50 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 7)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:50 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:43:50 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:44:25 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.9ms | Allocations: 183)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 1180)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:44:25 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 593)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:44:26 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:44:26 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 8)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 596)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:44:26 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 8)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 596)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:44:26 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 7)
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:45:35 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.8ms | Allocations: 361)
+Completed 200 OK in 24ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 3477)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:45:37 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.3ms | Allocations: 457)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 1689)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:45:37 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 8)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 598)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:45:37 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 8)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 596)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:45:37 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:54 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 22.7ms | Allocations: 180)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 1178)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:55 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 7)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 593)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:56 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:56 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:56 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 7)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:56 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:56 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:48:56 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:49:49 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 8)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 596)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:49:50 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 7)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:49:50 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ss/.rvm/gems/ruby-3.0.0/gems/railties-6.0.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 7)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 592)
+
+
+Started GET "/" for ::1 at 2023-08-10 17:50:29 +0530
+Processing by HomesController#index as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 1851)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-08-10 17:50:29 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 635)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 18.6ms | Allocations: 3967)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/ss/First/public/packs
+[Webpacker] Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-transform-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-transform-class-properties.
+The "loose" option must be the same for @babel/plugin-transform-class-properties, @babel/plugin-transform-private-methods and @babel/plugin-transform-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-transform-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-transform-private-methods since the "loose" mode option was set to "true" for @babel/plugin-transform-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-transform-class-properties, @babel/plugin-transform-private-methods and @babel/plugin-transform-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-transform-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-transform-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-transform-class-properties.
+The "loose" option must be the same for @babel/plugin-transform-class-properties, @babel/plugin-transform-private-methods and @babel/plugin-transform-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-transform-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-transform-private-methods since the "loose" mode option was set to "true" for @babel/plugin-transform-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-transform-class-properties, @babel/plugin-transform-private-methods and @babel/plugin-transform-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-transform-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: 666b4b17c239d77fe3e2
+Version: webpack 4.46.0
+Time: 2457ms
+Built at: 10/08/2023 5:50:36 pm
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-82550c4e3b8b39cde23f.js    120 KiB  application  [emitted] [immutable]  application
+js/application-82550c4e3b8b39cde23f.js.map    133 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-82550c4e3b8b39cde23f.js js/application-82550c4e3b8b39cde23f.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 748 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 6554ms (Views: 6520.0ms | ActiveRecord: 7.7ms | Allocations: 23887)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3875797148642676810)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateAdminUsers (20230810122333)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230810122333"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20230810122339)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230810122339"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3875797148642676810)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mAdminUser Create (0.7ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$12$ZSm2zhRFwonGnflRKnTiuuEw8D4jE7h232iLEpMwRnQm3U56bDKma"], ["created_at", "2023-08-10 12:28:31.860237"], ["updated_at", "2023-08-10 12:28:31.860237"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/sign_in" for ::1 at 2023-08-10 17:59:09 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 641)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 3944)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 882ms (Views: 855.4ms | ActiveRecord: 6.4ms | Allocations: 178273)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-08-10 17:59:22 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.9ms | Allocations: 194)
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 2113)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.0ms | Allocations: 8977)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-08-10 18:18:21 +0530
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 208)
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 540)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 4048)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 74.6ms | ActiveRecord: 8.4ms | Allocations: 35066)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-08-10 18:18:23 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 90)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1293)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 6994)
+
+
+Started POST "/users" for ::1 at 2023-08-10 18:18:35 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"T9bJG7RhRMN3uEDaRaYd/i5YGY7w9jixb1QV1WPZcsLY1+mVWrXKJQSLzD64ysY8wXAU3oKj5sVkXxH2ZsPtfw==", "user"=>{"email"=>"samphe68@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "samphe68@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 1.4ms | Allocations: 10118)
+
+
+  
+NameError (uninitialized constant User::UsermailerMailer):
+  
+app/models/user.rb:10:in `welcome_mail'
+Started POST "/users" for ::1 at 2023-08-10 18:19:57 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"T9bJG7RhRMN3uEDaRaYd/i5YGY7w9jixb1QV1WPZcsLY1+mVWrXKJQSLzD64ysY8wXAU3oKj5sVkXxH2ZsPtfw==", "user"=>{"email"=>"samphe68@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "samphe68@gmail.com"], ["LIMIT", 1]]
+  Rendering send_mailer/create.html.erb within layouts/mailer
+  Rendered send_mailer/create.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 156)
+SendMailer#create: processed outbound mail in 22.7ms
+Delivered mail 64d4dcf610f86_1317b46b441040@ss-Vostro-3581.mail (4564.0ms)
+Date: Thu, 10 Aug 2023 18:19:58 +0530
+From: from@example.com
+To: samphe68@gmail.com
+Message-ID: <64d4dcf610f86_1317b46b441040@ss-Vostro-3581.mail>
+Subject: A new user is created
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Hello! samphe68@gmail.com</h1>
+
+<p>
+  A new User has been created,
+  with samphe68@gmail.com this mail.
+</p>
+
+
+
+<!-- <h3>Now the  has total of <#%= @object_count %> records.</h3> -->
+<h4>Thank you</h4>
+<h4>From: Sambhav</h4>
+  </body>
+</html>
+
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "samphe68@gmail.com"], ["encrypted_password", "$2a$12$DAgblr9AUW9v.1T51aGv9ODnmd9sr21tyQkxiw5PteLhbyvlWZRuO"], ["created_at", "2023-08-10 12:49:57.991157"], ["updated_at", "2023-08-10 12:49:57.991157"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 5021ms (ActiveRecord: 8.4ms | Allocations: 48861)
+
+
+Started GET "/" for ::1 at 2023-08-10 18:20:02 +0530
+Processing by HomesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 29.0ms | ActiveRecord: 2.5ms | Allocations: 8511)
+
+
